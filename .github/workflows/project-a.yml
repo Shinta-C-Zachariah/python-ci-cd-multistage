@@ -32,3 +32,4 @@ jobs:
             pip install -e ./shared-lib
             export PYTHONPATH=$PWD/shared-lib
             pytest project-a/tests
+            

@@ -5,6 +5,7 @@ on:
     paths:
       - "project-b/**"
       - "shared-lib/**"
+      - ".github/workflows/project-b.yml"
   pull_request:
     paths:
       - "project-b/**"
