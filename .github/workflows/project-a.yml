@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "project-a/**"
+      - ".github/workflows/project-a.yml"
       - "shared-lib/**"
   pull_request:
     paths:
