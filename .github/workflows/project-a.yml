@@ -27,4 +27,6 @@ jobs:
           pip install -r project-a/requirements.txt
 
       - name: Run tests
-        run: pytest project-a/tests
+        run: |
+            pip install -e ./shared-lib
+            pytest project-a/tests
