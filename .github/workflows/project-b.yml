@@ -1,0 +1,30 @@
+name: Project B CI
+
+on:
+  push:
+    paths:
+      - "project-b/**"
+      - "shared-lib/**"
+  pull_request:
+    paths:
+      - "project-b/**"
+      - "shared-lib/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install ./shared-lib
+          pip install -r project-b/requirements.txt
+
+      - name: Run tests
+        run: pytest project-b/tests
